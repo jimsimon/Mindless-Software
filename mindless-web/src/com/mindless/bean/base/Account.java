@@ -7,5 +7,13 @@ package com.mindless.bean.base;
  * 
  */
 public abstract class Account {
-
+	private String guid;
+	
+	public void setGuid(String guid) {
+		this.guid = guid;
+	}
+	
+	public String getGuid(){
+		return this.guid;
+	}
 }

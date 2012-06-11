@@ -82,5 +82,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/stax-api-1.0-2.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/guava-12.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/mockito-all-1.9.5-rc1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
