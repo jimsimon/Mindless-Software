@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+html, body
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+body
+{
+	width: 1200px;
+	margin: 0px auto;
+	display: table;
+}
+
+#leftColumn
+{
+	display: table-cell;
+	width: 240px;
+	background: blue;
+}
+
+#rightColumn
+{
+	display: table-cell;
+	background: red;
+}
