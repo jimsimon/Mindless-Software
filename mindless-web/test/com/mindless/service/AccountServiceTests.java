@@ -13,10 +13,19 @@ public class AccountServiceTests {
 	}
 	
 	@Test
-	public void updateAccountName(Account account, String name) throws Exception{
+	public void updateAccountName() throws Exception{
+		Account testAccount = new Account();
 		AccountService accountService = new AccountService();
-		Account actualAccount = accountService.updateAccountName(account, "new name");
+		Account actualAccount = accountService.updateAccountName(testAccount, "new name");
 		assertEquals("Name is updated", actualAccount.getName(), "new name");
+	}
+
+	@Test
+	public void updateAccountFirstName() throws Exception{
+		Account testAccount = new Account();
+		AccountService accountService = new AccountService();
+		Account actualAccount = accountService.updateAccountFirstName(testAccount, "first name");
+		assertEquals("First name is updated", actualAccount.getFirstName(), "first name");
 	}
 	
 	@Test

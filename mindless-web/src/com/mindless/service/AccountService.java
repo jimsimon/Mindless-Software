@@ -16,5 +16,9 @@ public class AccountService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Account updateAccountFirstName(Account account, String firstName){
+		return null;
+	}
 
 }

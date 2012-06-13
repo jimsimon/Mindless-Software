@@ -15,5 +15,9 @@ public class Account {
 	public String getName() {
 		return null;
 	}
+	
+	public String getFirstName(){
+		return null;
+	}
 
 }
