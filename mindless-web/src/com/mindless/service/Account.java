@@ -12,4 +12,8 @@ public class Account {
 		return null;
 	}
 
+	public String getName() {
+		return null;
+	}
+
 }

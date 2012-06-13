@@ -12,4 +12,9 @@ public class AccountService {
 		return null;
 	}
 
+	public Account updateAccountName(Account account, String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
