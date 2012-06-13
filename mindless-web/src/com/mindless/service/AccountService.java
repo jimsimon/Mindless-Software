@@ -7,4 +7,9 @@ public class AccountService {
 		return account;
 	}
 
+	public Account authenticateAccount(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
