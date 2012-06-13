@@ -8,8 +8,9 @@ public class AccountService {
 	}
 
 	public Account authenticateAccount(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+		Account account = new Account();
+		account.setUsername(username);
+		return account;
 	}
 
 	public Account updateAccountName(Account account, String name) {
