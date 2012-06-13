@@ -33,10 +33,9 @@ public class AccountServiceTests {
 	}
 	
 	@Test
-	public void authenticateAccount() throws Exception {
+	public void authenticateAccountIsUsernameEqual() throws Exception {
 		expectedAccount.setUsername("testUsername");
 		Account actualAccount = testAccountService.authenticateAccount("testUsername", "abc123");
-		assertNotNull("Account is null", actualAccount);
 		assertEquals(expectedAccount.getUsername(), actualAccount.getUsername());
 	}
 }
