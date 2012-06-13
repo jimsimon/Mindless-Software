@@ -21,4 +21,8 @@ public class AccountService {
 		return null;
 	}
 
+	public Account updateAccountLastName(Account testAccount, String string) {
+		return null;
+	}
+
 }

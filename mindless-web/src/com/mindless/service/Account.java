@@ -20,4 +20,8 @@ public class Account {
 		return null;
 	}
 
+	public String getLastName() {
+		return null;
+	}
+
 }
