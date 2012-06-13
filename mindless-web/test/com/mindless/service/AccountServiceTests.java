@@ -19,4 +19,9 @@ public class AccountServiceTests {
 		verify(testAccountService).getAccountByGuid(accountGuidCaptor.capture());
 		assertEquals("test_guid", accountGuidCaptor.getValue());
 	}
+	
+	@Test
+	public void doJimSucksTest() {
+		assertEquals("Jim Sucks", "Jim Sucks");
+	}
 }
