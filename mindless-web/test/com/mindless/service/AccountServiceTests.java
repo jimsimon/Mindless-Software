@@ -33,6 +33,13 @@ public class AccountServiceTests {
 	}
 	
 	@Test
+	public void makeAccountAnAdministrator() throws Exception{
+		boolean admin = true;
+		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount, admin);
+		assertEquals("Account admin flag is set", actualAccount.isAdmin(), admin);
+	}
+	
+	@Test
 	public void authenticateAccountIsUsernameEqual() throws Exception {
 		expectedAccount.setUsername("testUsername");
 		Account actualAccount = testAccountService.authenticateAccount("testUsername", "abc123");

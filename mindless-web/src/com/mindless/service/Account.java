@@ -24,4 +24,8 @@ public class Account {
 		return null;
 	}
 
+	public boolean isAdmin() {
+		return false;
+	}
+
 }

@@ -26,4 +26,10 @@ public class AccountService {
 		return null;
 	}
 
+	public Account makeAccountAnAdministrator(Account expectedAccount,
+			boolean admin) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
