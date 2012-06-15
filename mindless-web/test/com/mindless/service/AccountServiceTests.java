@@ -1,7 +1,11 @@
 package com.mindless.service;
 
+import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class AccountServiceTests {
 	Account expectedAccount = new Account();
@@ -17,26 +21,26 @@ public class AccountServiceTests {
 	@Test
 	public void updateAccountName() throws Exception{
 		Account actualAccount = testAccountService.updateAccountName(expectedAccount, "new name");
-		assertEquals("Name is updated", actualAccount.getName(), "new name");
+		assertEquals("Name is not updated", actualAccount.getName(), "new name");
 	}
 
 	@Test
 	public void updateAccountFirstName() throws Exception{
 		Account actualAccount = testAccountService.updateAccountFirstName(expectedAccount, "first name");
-		assertEquals("First name is updated", actualAccount.getFirstName(), "first name");
+		assertEquals("First name is not updated", actualAccount.getFirstName(), "first name");
 	}
 	
 	@Test
 	public void updateAccountLastName() throws Exception{
 		Account actualAccount = testAccountService.updateAccountLastName(expectedAccount, "last name");
-		assertEquals("Last name is updated", actualAccount.getLastName(), "last name");
+		assertEquals("Last name is not updated", actualAccount.getLastName(), "last name");
 	}
 	
 	@Test
 	public void makeAccountAnAdministrator() throws Exception{
 		boolean admin = true;
 		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount, admin);
-		assertEquals("Account admin flag is set", actualAccount.isAdmin(), admin);
+		assertEquals("Account admin flag is not updated", actualAccount.isAdmin(), admin);
 	}
 	
 	@Test
@@ -44,5 +48,17 @@ public class AccountServiceTests {
 		expectedAccount.setUsername("testUsername");
 		Account actualAccount = testAccountService.authenticateAccount("testUsername", "abc123");
 		assertEquals(expectedAccount.getUsername(), actualAccount.getUsername());
+	}
+	
+	@Test
+	public void updateAccountUsername() throws Exception {
+		Account actualAccount = testAccountService.updateAccountUsername(expectedAccount, "username");
+		assertEquals("Username is not updated", actualAccount.getUsername(), "username");
+	}
+	
+	@Test
+	public void updateAccountPassword() throws Exception {
+		Account actualAccount = testAccountService.updateAccountPassword(expectedAccount, "abc123");
+		assertThat("Password is not updated", actualAccount.getLastPasswordChangeDate(), not(expectedAccount.getLastPasswordChangeDate()));
 	}
 }

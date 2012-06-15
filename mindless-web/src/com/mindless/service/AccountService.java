@@ -14,20 +14,32 @@ public class AccountService {
 	}
 
 	public Account updateAccountName(Account account, String name) {
-		// TODO Auto-generated method stub
-		return null;
+		account.setName(name);
+		return account;
 	}
 	
 	public Account updateAccountFirstName(Account account, String firstName){
-		return null;
+		account.setFirstName(firstName);
+		return account;
 	}
 
-	public Account updateAccountLastName(Account testAccount, String string) {
-		return null;
+	public Account updateAccountLastName(Account account, String lastName) {
+		account.setLastName(lastName);
+		return account;
 	}
 
-	public Account makeAccountAnAdministrator(Account expectedAccount,
+	public Account makeAccountAnAdministrator(Account account,
 			boolean admin) {
+		account.setAdmin(admin);
+		return account;
+	}
+
+	public Account updateAccountUsername(Account expectedAccount, String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Account updateAccountPassword(Account expectedAccount, String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
