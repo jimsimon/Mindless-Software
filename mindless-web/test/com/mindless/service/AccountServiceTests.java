@@ -56,7 +56,7 @@ public class AccountServiceTests {
 		assertEquals("Username is not updated", actualAccount.getUsername(), "username");
 	}
 	
-	@Test
+	@Test //Not quite sure this is a good test??
 	public void updateAccountPassword() throws Exception {
 		Account actualAccount = testAccountService.updateAccountPassword(expectedAccount, "abc123");
 		assertThat("Password is not updated", actualAccount.getLastPasswordChangeDate(), not(expectedAccount.getLastPasswordChangeDate()));

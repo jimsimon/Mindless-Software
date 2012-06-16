@@ -4,17 +4,15 @@ import java.util.Date;
 
 public class Account {
 
-	private String name, firstName, lastName;
+	private String name, firstName, lastName, userName;
 	private boolean admin;
 	
-	public void setUsername(String string) {
-		// TODO Auto-generated method stub
-		
+	public void setUsername(String userName) {
+		this.userName = userName;
 	}
 
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return userName;
 	}
 
 	public String getName() {

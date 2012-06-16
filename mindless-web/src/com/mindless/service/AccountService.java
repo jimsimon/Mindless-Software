@@ -34,12 +34,12 @@ public class AccountService {
 		return account;
 	}
 
-	public Account updateAccountUsername(Account expectedAccount, String string) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account updateAccountUsername(Account account, String userName) {
+		account.setUsername(userName);
+		return account;
 	}
 
-	public Account updateAccountPassword(Account expectedAccount, String string) {
+	public Account updateAccountPassword(Account account, String password) {
 		// TODO Auto-generated method stub
 		return null;
 	}
