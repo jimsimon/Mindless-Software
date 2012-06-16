@@ -14,14 +14,23 @@ public class AccountService {
 	}
 
 	public Account updateAccountName(Account account) {
+		if(null == account.getName()){
+			throw new RuntimeException();
+		}
 		return account;
 	}
 	
 	public Account updateAccountFirstName(Account account){
+		if(null == account.getFirstName()){
+			throw new RuntimeException();
+		}
 		return account;
 	}
 
 	public Account updateAccountLastName(Account account) {
+		if(null == account.getLastName()){
+			throw new RuntimeException();
+		}
 		return account;
 	}
 
@@ -36,6 +45,11 @@ public class AccountService {
 	public Account updateAccountPassword(Account account, String password) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Account revokeAdministratorPrivilegeFromAccount(
+			Account account) {
+		return account;
 	}
 
 }

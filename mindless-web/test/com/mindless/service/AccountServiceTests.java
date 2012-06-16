@@ -25,6 +25,13 @@ public class AccountServiceTests {
 		Account actualAccount = testAccountService.updateAccountName(expectedAccount);
 		assertEquals("Name is not updated", actualAccount.getName(), "new name");
 	}
+	
+	@Test (expected=RuntimeException.class)
+	public void updateAccountNameToNullThrowsRuntimeException() throws Exception{
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setName(null);
+		testAccountService.updateAccountName(expectedAccount);
+	}
 
 	@Test
 	public void updateAccountFirstName() throws Exception{
@@ -34,6 +41,13 @@ public class AccountServiceTests {
 		assertEquals("First name is not updated", actualAccount.getFirstName(), "first name");
 	}
 	
+	@Test (expected=RuntimeException.class)
+	public void updateAccountFirstNameToNullThrowsRuntimeException() throws Exception{
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setFirstName(null);
+		testAccountService.updateAccountFirstName(expectedAccount);
+	} 
+	
 	@Test
 	public void updateAccountLastName() throws Exception{
 		expectedAccount = vanillaExpectedAccount();
@@ -42,12 +56,27 @@ public class AccountServiceTests {
 		assertEquals("Last name is not updated", actualAccount.getLastName(), "last name");
 	}
 	
+	@Test (expected=RuntimeException.class)
+	public void updateAccountLastNameToNullThrowsRuntimeException() throws Exception{
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setLastName(null);
+		testAccountService.updateAccountLastName(expectedAccount);
+	} 
+	
 	@Test
 	public void makeAccountAnAdministrator() throws Exception{
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setAdmin(true);
 		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount);
-		assertEquals("Account admin flag is not updated", actualAccount.isAdmin(), true);
+		assertEquals("Account admin flag is true", actualAccount.isAdmin(), true);
+	}
+	
+	@Test
+	public void revokeAdministratorPrivilegeFromAccount() throws Exception{
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setAdmin(false);
+		Account actualAccount = testAccountService.revokeAdministratorPrivilegeFromAccount(expectedAccount);
+		assertEquals("Account admin flag is false", actualAccount.isAdmin(), false);
 	}
 	
 	@Test
