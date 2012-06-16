@@ -15,13 +15,37 @@ body
 
 #leftColumn
 {
-	display: table-cell;
+	display: inline-block;
 	width: 240px;
-	background: blue;
+	background: lightblue;
+	vertical-align: top;
 }
 
 #rightColumn
 {
-	display: table-cell;
+	display: inline-block;
 	background: red;
+	vertical-align: top;
+}
+
+#featuredCarousel
+{
+/* 	border: 1px solid black; */
+	width: 960px;
+	height: 300px;
+}
+
+#gridContainer
+{
+	width: 960px;
+	font-size: 0px; /* eliminates space between inline-block elements */
+}
+
+.gridCell
+{
+	font-size: medium;
+	display: inline-block;
+	width: 238px;
+	height: 198px;
+	border: 1px solid black;
 }
