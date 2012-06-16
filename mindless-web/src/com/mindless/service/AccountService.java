@@ -57,5 +57,10 @@ public class AccountService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Account revokeAdministratorPrivilegeFromAccount(
+			Account account) {
+		return account;
+	}
 
 }
