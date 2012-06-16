@@ -13,29 +13,23 @@ public class AccountService {
 		return account;
 	}
 
-	public Account updateAccountName(Account account, String name) {
-		account.setName(name);
+	public Account updateAccountName(Account account) {
 		return account;
 	}
 	
-	public Account updateAccountFirstName(Account account, String firstName){
-		account.setFirstName(firstName);
+	public Account updateAccountFirstName(Account account){
 		return account;
 	}
 
-	public Account updateAccountLastName(Account account, String lastName) {
-		account.setLastName(lastName);
+	public Account updateAccountLastName(Account account) {
 		return account;
 	}
 
-	public Account makeAccountAnAdministrator(Account account,
-			boolean admin) {
-		account.setAdmin(admin);
+	public Account makeAccountAnAdministrator(Account account) {
 		return account;
 	}
 
-	public Account updateAccountUsername(Account account, String userName) {
-		account.setUsername(userName);
+	public Account updateAccountUsername(Account account) {
 		return account;
 	}
 
