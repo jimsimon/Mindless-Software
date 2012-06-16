@@ -7,7 +7,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.mindless.bean.Account;
@@ -108,12 +107,14 @@ public class AccountServiceTests {
 	
 	@Test
 	public void banAccount() throws Exception {
+		expectedAccount = vanillaExpectedAccount();
 		Account actualAccount = testAccountService.banAccount(expectedAccount);
 		assertTrue("Account is not banned", actualAccount.isBanned());
 	}
 	
 	@Test
 	public void unbanAccount() throws Exception {
+		expectedAccount = vanillaExpectedAccount();
 		Account actualAccount = testAccountService.unbanAccount(expectedAccount);
 		assertFalse("Account is not banned", actualAccount.isBanned());
 	}
@@ -125,9 +126,10 @@ public class AccountServiceTests {
 	}
 	
 	@Test
-	@Ignore //Not sure how to verify this without mocking the dao call...and don't say return a boolean, because that's pointless...
 	public void deleteAccount() throws Exception {
-		testAccountService.deleteAccount(expectedAccount);
+		expectedAccount = vanillaExpectedAccount();
+		Account actualAccount =	testAccountService.deleteAccount(expectedAccount);
+		assertTrue("Account is not deleted", actualAccount.isDeleted());
 	}
 	
 	private Account vanillaExpectedAccount(){

@@ -5,7 +5,7 @@ import java.util.Date;
 public class Account {
 
 	private String name, firstName, lastName, userName, guid;
-	private boolean admin, banned;
+	private boolean admin, banned, deleted;
 	
 	public void setUsername(String userName) {
 		this.userName = userName;
@@ -66,5 +66,13 @@ public class Account {
 
 	public void setGuid(String guid) {
 		this.guid = guid;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
+
+	public boolean isDeleted() {
+		return deleted;
 	}
 }

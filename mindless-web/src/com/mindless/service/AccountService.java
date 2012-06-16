@@ -59,9 +59,9 @@ public class AccountService {
 		return account;
 	}
 
-	public void deleteAccount(Account expectedAccount) {
-		// TODO Auto-generated method stub
-		
+	public Account deleteAccount(Account account) {
+		account.setDeleted(true);
+		return account;
 	}
 
 	public Account getAccountByGuid(String guid) {
