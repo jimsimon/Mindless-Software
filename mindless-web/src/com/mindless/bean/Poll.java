@@ -2,7 +2,7 @@ package com.mindless.bean;
 
 public class Poll {
 
-	private long positiveVotes;
+	private long positiveVotes, negativeVotes;
 
 	public long getPositiveVotes() {
 		return positiveVotes;
@@ -12,4 +12,11 @@ public class Poll {
 		this.positiveVotes = positiveVotes;
 	}
 
+	public void setNegativeVotes(long negativeVotes) {
+		this.negativeVotes = negativeVotes;
+	}
+
+	public long getNegativeVotes() {
+		return negativeVotes;
+	}
 }
