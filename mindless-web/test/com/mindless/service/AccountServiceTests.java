@@ -23,37 +23,49 @@ public class AccountServiceTests {
 	
 	@Test
 	public void updateAccountName() throws Exception{
-		Account actualAccount = testAccountService.updateAccountName(expectedAccount, "new name");
-		assertEquals("Name is not updated", "new name", actualAccount.getName());
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setName("new name");
+		Account actualAccount = testAccountService.updateAccountName(expectedAccount);
+		assertEquals("Name is not updated", actualAccount.getName(), "new name");
 	}
 
 	@Test
 	public void updateAccountFirstName() throws Exception{
-		Account actualAccount = testAccountService.updateAccountFirstName(expectedAccount, "first name");
-		assertEquals("First name is not updated", "first name", actualAccount.getFirstName());
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setFirstName("first name");
+		Account actualAccount = testAccountService.updateAccountFirstName(expectedAccount);
+		assertEquals("First name is not updated", actualAccount.getFirstName(), "first name");
 	}
 	
 	@Test
 	public void updateAccountLastName() throws Exception{
-		Account actualAccount = testAccountService.updateAccountLastName(expectedAccount, "last name");
-		assertEquals("Last name is not updated", "last name", actualAccount.getLastName());
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setLastName("last name");
+		Account actualAccount = testAccountService.updateAccountLastName(expectedAccount);
+		assertEquals("Last name is not updated", actualAccount.getLastName(), "last name");
 	}
 	
 	@Test
 	public void makeAccountAnAdministrator() throws Exception{
-		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount, true);
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setAdmin(true);
+		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount);
 		assertTrue("Account admin flag is not updated", actualAccount.isAdmin());
 	}
 	
 	@Test
 	public void authenticateAccountIsUsernameEqual() throws Exception {
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setUsername("testUsername");
 		Account actualAccount = testAccountService.authenticateAccount("testUsername", "abc123");
 		assertEquals("Username does not match", "testUsername", actualAccount.getUsername());
 	}
 	
 	@Test
 	public void updateAccountUsername() throws Exception {
-		Account actualAccount = testAccountService.updateAccountUsername(expectedAccount, "username");
+		expectedAccount = vanillaExpectedAccount();
+		expectedAccount.setUsername("username");
+		Account actualAccount = testAccountService.updateAccountUsername(expectedAccount);
 		assertEquals("Username is not updated", "username", actualAccount.getUsername());
 	}
 	
@@ -85,5 +97,9 @@ public class AccountServiceTests {
 	@Ignore //Not sure how to verify this without mocking the dao call...and don't say return a boolean, because that's pointless...
 	public void deleteAccount() throws Exception {
 		testAccountService.deleteAccount(expectedAccount);
+	}
+	
+	private Account vanillaExpectedAccount(){
+		return new Account();
 	}
 }
