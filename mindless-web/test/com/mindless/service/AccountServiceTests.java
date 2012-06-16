@@ -2,9 +2,12 @@ package com.mindless.service;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.mindless.bean.Account;
@@ -70,7 +73,7 @@ public class AccountServiceTests {
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setAdmin(true);
 		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount);
-		assertEquals("Account admin flag is true", actualAccount.isAdmin(), true);
+		assertTrue("Account admin flag is not updated", actualAccount.isAdmin());
 	}
 	
 	@Test
@@ -78,7 +81,7 @@ public class AccountServiceTests {
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setAdmin(false);
 		Account actualAccount = testAccountService.revokeAdministratorPrivilegeFromAccount(expectedAccount);
-		assertEquals("Account admin flag is false", actualAccount.isAdmin(), false);
+		assertFalse("Account admin flag is false", actualAccount.isAdmin());
 	}
 	
 	@Test
@@ -86,7 +89,7 @@ public class AccountServiceTests {
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setUsername("testUsername");
 		Account actualAccount = testAccountService.authenticateAccount("testUsername", "abc123");
-		assertEquals(expectedAccount.getUsername(), actualAccount.getUsername());
+		assertEquals("Username does not match", "testUsername", actualAccount.getUsername());
 	}
 	
 	@Test
@@ -94,13 +97,37 @@ public class AccountServiceTests {
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setUsername("username");
 		Account actualAccount = testAccountService.updateAccountUsername(expectedAccount);
-		assertEquals("Username is not updated", actualAccount.getUsername(), "username");
+		assertEquals("Username is not updated", "username", actualAccount.getUsername());
 	}
 	
 	@Test //Not quite sure this is a good test??
 	public void updateAccountPassword() throws Exception {
 		Account actualAccount = testAccountService.updateAccountPassword(expectedAccount, "abc123");
-		assertThat("Password is not updated", actualAccount.getLastPasswordChangeDate(), not(expectedAccount.getLastPasswordChangeDate()));
+		assertThat("Password is not updated", expectedAccount.getLastPasswordChangeDate(), not(actualAccount.getLastPasswordChangeDate()));
+	}
+	
+	@Test
+	public void banAccount() throws Exception {
+		Account actualAccount = testAccountService.banAccount(expectedAccount);
+		assertTrue("Account is not banned", actualAccount.isBanned());
+	}
+	
+	@Test
+	public void unbanAccount() throws Exception {
+		Account actualAccount = testAccountService.unbanAccount(expectedAccount);
+		assertFalse("Account is not banned", actualAccount.isBanned());
+	}
+	
+	@Test
+	public void getAccountByGuid() throws Exception {
+		Account actualAccount = testAccountService.getAccountByGuid("12345-abcde-54321-edcba-00000");
+		assertEquals("Guid is different", "12345-abcde-54321-edcba-00000", actualAccount.getGuid());
+	}
+	
+	@Test
+	@Ignore //Not sure how to verify this without mocking the dao call...and don't say return a boolean, because that's pointless...
+	public void deleteAccount() throws Exception {
+		testAccountService.deleteAccount(expectedAccount);
 	}
 	
 	private Account vanillaExpectedAccount(){
