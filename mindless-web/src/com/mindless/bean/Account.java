@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Account {
 
-	private String name, firstName, lastName, userName;
-	private boolean admin;
+	private String name, firstName, lastName, userName, guid;
+	private boolean admin, banned;
 	
 	public void setUsername(String userName) {
 		this.userName = userName;
@@ -53,12 +53,18 @@ public class Account {
 	}
 
 	public boolean isBanned() {
-		// TODO Auto-generated method stub
-		return false;
+		return banned;
 	}
 
 	public Object getGuid() {
-		// TODO Auto-generated method stub
-		return null;
+		return guid;
+	}
+
+	public void setBanned(boolean banned) {
+		this.banned = banned;
+	}
+
+	public void setGuid(String guid) {
+		this.guid = guid;
 	}
 }

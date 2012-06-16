@@ -16,14 +16,23 @@ public class AccountService {
 	}
 
 	public Account updateAccountName(Account account) {
+		if(null == account.getName()){
+			throw new NullPointerException();
+		}
 		return account;
 	}
 	
 	public Account updateAccountFirstName(Account account){
+		if(null == account.getFirstName()){
+			throw new NullPointerException();
+		}
 		return account;
 	}
 
 	public Account updateAccountLastName(Account account) {
+		if(null == account.getLastName()){
+			throw new NullPointerException();
+		}
 		return account;
 	}
 
@@ -40,14 +49,14 @@ public class AccountService {
 		return null;
 	}
 
-	public Account banAccount(Account expectedAccount) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account banAccount(Account account) {
+		account.setBanned(true);
+		return account;
 	}
 
-	public Account unbanAccount(Account expectedAccount) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account unbanAccount(Account account) {
+		account.setBanned(false);
+		return account;
 	}
 
 	public void deleteAccount(Account expectedAccount) {
@@ -55,9 +64,10 @@ public class AccountService {
 		
 	}
 
-	public Account getAccountByGuid(String string) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account getAccountByGuid(String guid) {
+		Account account = new Account();
+		account.setGuid(guid);
+		return account;
 	}
 	
 	public Account revokeAdministratorPrivilegeFromAccount(

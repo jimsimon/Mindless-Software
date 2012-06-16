@@ -31,8 +31,8 @@ public class AccountServiceTests {
 		assertEquals("Name is not updated", actualAccount.getName(), "new name");
 	}
 	
-	@Test (expected=RuntimeException.class)
-	public void updateAccountNameToNullThrowsRuntimeException() throws Exception{
+	@Test (expected=NullPointerException.class)
+	public void updateAccountNameToNullThrowsNullPointerException() throws Exception{
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setName(null);
 		testAccountService.updateAccountName(expectedAccount);
@@ -46,8 +46,8 @@ public class AccountServiceTests {
 		assertEquals("First name is not updated", actualAccount.getFirstName(), "first name");
 	}
 	
-	@Test (expected=RuntimeException.class)
-	public void updateAccountFirstNameToNullThrowsRuntimeException() throws Exception{
+	@Test (expected=NullPointerException.class)
+	public void updateAccountFirstNameToNullThrowsNullPointerException() throws Exception{
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setFirstName(null);
 		testAccountService.updateAccountFirstName(expectedAccount);
@@ -61,8 +61,8 @@ public class AccountServiceTests {
 		assertEquals("Last name is not updated", actualAccount.getLastName(), "last name");
 	}
 	
-	@Test (expected=RuntimeException.class)
-	public void updateAccountLastNameToNullThrowsRuntimeException() throws Exception{
+	@Test (expected=NullPointerException.class)
+	public void updateAccountLastNameToNullThrowsNullPointerException() throws Exception{
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setLastName(null);
 		testAccountService.updateAccountLastName(expectedAccount);
