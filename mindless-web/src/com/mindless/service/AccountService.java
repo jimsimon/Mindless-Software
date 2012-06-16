@@ -1,5 +1,7 @@
 package com.mindless.service;
 
+import com.mindless.bean.Account;
+
 public class AccountService {
 
 	public Account createAccount(Account account) {

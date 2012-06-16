@@ -7,6 +7,8 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
+import com.mindless.bean.Account;
+
 public class AccountServiceTests {
 	Account expectedAccount = new Account();
 	AccountService testAccountService = new AccountService();

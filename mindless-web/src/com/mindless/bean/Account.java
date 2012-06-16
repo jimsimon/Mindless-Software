@@ -1,4 +1,4 @@
-package com.mindless.service;
+package com.mindless.bean;
 
 import java.util.Date;
 
