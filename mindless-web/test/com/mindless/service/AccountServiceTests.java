@@ -71,10 +71,7 @@ public class AccountServiceTests {
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setAdmin(true);
 		Account actualAccount = testAccountService.makeAccountAnAdministrator(expectedAccount);
-<<<<<<< HEAD
 		assertTrue("Account admin flag is not updated", actualAccount.isAdmin());
-=======
-		assertEquals("Account admin flag is true", actualAccount.isAdmin(), true);
 	}
 	
 	@Test
@@ -82,8 +79,7 @@ public class AccountServiceTests {
 		expectedAccount = vanillaExpectedAccount();
 		expectedAccount.setAdmin(false);
 		Account actualAccount = testAccountService.revokeAdministratorPrivilegeFromAccount(expectedAccount);
-		assertEquals("Account admin flag is false", actualAccount.isAdmin(), false);
->>>>>>> branch 'master' of ssh://git@github.com/Fenix86/Mindless-Software.git
+		assertFalse("Account admin flag is false", actualAccount.isAdmin());
 	}
 	
 	@Test
