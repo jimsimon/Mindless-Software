@@ -44,4 +44,24 @@ public class AccountService {
 		return null;
 	}
 
+	public Account banAccount(Account expectedAccount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Account unbanAccount(Account expectedAccount) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void deleteAccount(Account expectedAccount) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Account getAccountByGuid(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

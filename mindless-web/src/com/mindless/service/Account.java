@@ -52,4 +52,14 @@ public class Account {
 		return null;
 	}
 
+	public boolean isBanned() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Object getGuid() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
