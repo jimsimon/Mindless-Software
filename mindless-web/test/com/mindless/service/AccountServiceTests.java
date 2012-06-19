@@ -31,7 +31,7 @@ public class AccountServiceTests {
 	public void createAccount() throws Exception {
 		AccountService accountService = new AccountService();
 		Account actualAccount = accountService.createAccount(new Account());
-		assertNotNull("Account is not null", actualAccount);
+		assertNotNull("Account is null", actualAccount);
 	}
 	
 	@Test

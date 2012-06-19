@@ -3,6 +3,7 @@ package com.mindless.bean;
 public class Poll {
 
 	private long positiveVotes, negativeVotes;
+	private boolean closed;
 
 	public long getPositiveVotes() {
 		return positiveVotes;
@@ -18,5 +19,13 @@ public class Poll {
 
 	public long getNegativeVotes() {
 		return negativeVotes;
+	}
+
+	public void setClosed(boolean closed) {
+		this.closed = closed;
+	}
+
+	public boolean isClosed() {
+		return closed;
 	}
 }
