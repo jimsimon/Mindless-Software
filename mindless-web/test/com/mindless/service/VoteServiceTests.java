@@ -23,14 +23,14 @@ public class VoteServiceTests {
 	}
 	
 	@Test
-	public void votePositiveForPollUpdatesPositiveVoteCount(){
+	public void votePositiveForPollUpdatesPositiveVoteCount() throws Exception{
 		expectedPoll.setPositiveVotes(0);
 		Poll actualPoll = testVoteService.addPositiveVote(expectedPoll);
 		assertEquals("Vote total is not one", 1, actualPoll.getPositiveVotes());
 	}
 	
 	@Test
-	public void voteNegativeForPollUpdatesNegativeVoteCount(){
+	public void voteNegativeForPollUpdatesNegativeVoteCount() throws Exception{
 		expectedPoll.setNegativeVotes(0);
 		Poll actualPoll = testVoteService.addNegativeVote(expectedPoll);
 		assertEquals("Vote total is not one", 1, actualPoll.getNegativeVotes());

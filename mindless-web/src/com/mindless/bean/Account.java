@@ -6,6 +6,7 @@ public class Account {
 
 	private String name, firstName, lastName, userName, guid;
 	private boolean admin, banned, deleted;
+	private long points;
 	
 	public void setUsername(String userName) {
 		this.userName = userName;
@@ -56,7 +57,7 @@ public class Account {
 		return banned;
 	}
 
-	public Object getGuid() {
+	public String getGuid() {
 		return guid;
 	}
 
@@ -74,5 +75,13 @@ public class Account {
 
 	public boolean isDeleted() {
 		return deleted;
+	}
+
+	public void setPoints(long points) {
+		this.points = points;
+	}
+	
+	public long getPoints(){
+		return points;
 	}
 }

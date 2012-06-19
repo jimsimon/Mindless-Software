@@ -70,8 +70,18 @@ public class AccountService {
 		return account;
 	}
 	
-	public Account revokeAdministratorPrivilegeFromAccount(
-			Account account) {
+	public Account revokeAdministratorPrivilegeFromAccount(Account account) {
+		account.setAdmin(false);
+		return account;
+	}
+
+	public Account creditPointsToAccount(Account account, long points) {
+		account.setPoints(account.getPoints() + points);
+		return account;
+	}
+
+	public Account debitPointsFromAccount(Account account, long points) {
+		account.setPoints(account.getPoints() - points);
 		return account;
 	}
 

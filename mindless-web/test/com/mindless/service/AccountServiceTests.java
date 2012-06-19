@@ -82,7 +82,6 @@ public class AccountServiceTests {
 	
 	@Test
 	public void revokeAdministratorPrivilegeFromAccount() throws Exception{
-		expectedAccount.setAdmin(false);
 		Account actualAccount = testAccountService.revokeAdministratorPrivilegeFromAccount(expectedAccount);
 		assertFalse("Account admin flag is false", actualAccount.isAdmin());
 	}
@@ -129,5 +128,19 @@ public class AccountServiceTests {
 	public void deleteAccount() throws Exception {
 		Account actualAccount =	testAccountService.deleteAccount(expectedAccount);
 		assertTrue("Account is not deleted", actualAccount.isDeleted());
+	}
+	
+	@Test
+	public void creditPointsToAccount() throws Exception{
+		expectedAccount.setPoints(0);
+		Account actualAccount = testAccountService.creditPointsToAccount(expectedAccount, 100L);
+		assertEquals("Account has 100 points", actualAccount.getPoints(), 100L);
+	}
+	
+	@Test
+	public void debitPointsFromAccount() throws Exception{
+		expectedAccount.setPoints(50L);
+		Account actualAccount = testAccountService.debitPointsFromAccount(expectedAccount, 50L);
+		assertEquals("Account has 0 points", actualAccount.getPoints(), 0);
 	}
 }
