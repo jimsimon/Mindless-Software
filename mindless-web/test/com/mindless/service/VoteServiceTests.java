@@ -22,17 +22,4 @@ public class VoteServiceTests {
 		this.expectedPoll = null;
 	}
 	
-	@Test
-	public void votePositiveForPollUpdatesPositiveVoteCount() throws Exception{
-		expectedPoll.setPositiveVotes(0);
-		Poll actualPoll = testVoteService.addPositiveVote(expectedPoll);
-		assertEquals("Vote total is not one", 1, actualPoll.getPositiveVotes());
-	}
-	
-	@Test
-	public void voteNegativeForPollUpdatesNegativeVoteCount() throws Exception{
-		expectedPoll.setNegativeVotes(0);
-		Poll actualPoll = testVoteService.addNegativeVote(expectedPoll);
-		assertEquals("Vote total is not one", 1, actualPoll.getNegativeVotes());
-	}
 }

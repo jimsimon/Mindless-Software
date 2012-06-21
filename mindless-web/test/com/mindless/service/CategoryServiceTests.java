@@ -1,7 +1,6 @@
 package com.mindless.service;
 
 
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -12,17 +11,14 @@ import org.junit.Test;
 
 import com.mindless.bean.Account;
 import com.mindless.bean.Category;
-import com.mindless.bean.Entity;
 
 public class CategoryServiceTests {
 	Category expectedCategory = new Category();
-	Entity expectedEntity = new Entity();
 	CategoryService testCategoryService = new CategoryService();
 	
 	@Before
 	public void initializeExpectedCategory(){
 		this.expectedCategory = new Category();
-		this.expectedEntity = new Entity();
 	}
 	
 	@After
@@ -57,6 +53,7 @@ public class CategoryServiceTests {
 	
 	@Test
 	public void viewCategory() throws Exception {
-		Category category = 
+		Category category = testCategoryService.viewCategory("id");
+		assertNotNull(category.getId());
 	}
 }

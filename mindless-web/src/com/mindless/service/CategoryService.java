@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.mindless.bean.Account;
 import com.mindless.bean.Category;
-import com.mindless.bean.Entity;
 
 public class CategoryService {
 
@@ -24,6 +23,11 @@ public class CategoryService {
 	}
 
 	public List<Category> viewRecommendedCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Category viewCategory(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}	
