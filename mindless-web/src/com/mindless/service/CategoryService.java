@@ -1,17 +1,30 @@
 package com.mindless.service;
 
+import java.util.List;
+
+import com.mindless.bean.Account;
 import com.mindless.bean.Category;
 import com.mindless.bean.Entity;
 
 public class CategoryService {
 
-	public Category createCategory(Category category) {
-		return category;
+	public List<Category> viewCategories() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public Category addEntityToCategory(Entity entity, Category category) {
-		category.setEntity(entity);
-		return category;
+	public List<Category> viewFavoriteCategories(Account account) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+	public List<Category> viewTrendingCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Category> viewRecommendedCategories() {
+		// TODO Auto-generated method stub
+		return null;
+	}	
 }
